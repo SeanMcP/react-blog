@@ -20,13 +20,16 @@ export default class Feed extends Component {
   render() {
     let blogFeed = this.state.posts.map(post => {
       return (
-        <li key={post._id}><Link to={`/view/${post._id}`}>{post.blogTitle}</Link> by {post.authorName}</li>
+        <li key={post._id} className='list-group-item'>
+        <Link to={`/view/${post._id}`}>
+          <span className='font-weight-bold'>{post.blogTitle}</span>
+        </Link> by <span className='font-italic'>{post.authorName}</span></li>
       )
     })
     return (
       <div>
-        <h1>Blog Feed</h1>
-        <ul>
+        <h1 className='mb-4'>Blog Feed</h1>
+        <ul className='list-group'>
           {blogFeed}
         </ul>
       </div>
