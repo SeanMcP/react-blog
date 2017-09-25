@@ -7,7 +7,6 @@ export default class View extends Component {
     this.state = {
       post: {}
     }
-    console.log('this.props.match', this.props.match);
   }
   componentDidMount() {
     fetch(`https://tiny-lasagna-server.herokuapp.com/collections/blogger/${this.props.match.params.id}`)
@@ -20,9 +19,9 @@ export default class View extends Component {
     let post = this.state.post;
     return (
       <div>
-        <Link to={`${match.url}`}><h1>{post.title}</h1></Link>
-        <h4>By {post.name}</h4>
-        <p>{post.blog}</p>
+        <Link to={`${match.url}`}><h1>{post.blogTitle}</h1></Link>
+        <h4>By {post.authorName}</h4>
+        <p>{post.blogEntry}</p>
       </div>
     );
   }

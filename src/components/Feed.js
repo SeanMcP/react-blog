@@ -14,14 +14,13 @@ export default class Feed extends Component {
     .then(results => results.json())
     .then(data => {
       this.setState({posts: data})
-      console.log('data', data);
     })
     .catch(err => console.log(err))
   }
   render() {
     let blogFeed = this.state.posts.map(post => {
       return (
-        <li key={post._id}><Link to={`/view/${post._id}`}>{post.title}</Link> by {post.name}</li>
+        <li key={post._id}><Link to={`/view/${post._id}`}>{post.blogTitle}</Link> by {post.authorName}</li>
       )
     })
     return (
