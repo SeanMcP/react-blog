@@ -18,9 +18,9 @@ export default class View extends Component {
     let match = this.props.match;
     let post = this.state.post;
     return (
-      <div>
-        <Link to={`${match.url}`}><h1>{post.blogTitle}</h1></Link>
-        <h4>By {post.authorName}</h4>
+      <div className='card p-4'>
+        <Link to={`${match.url}`}><h1 className='display-4'>{post.blogTitle}</h1></Link>
+        <p className='lead'>By {post.authorName}</p>
         <p>{post.blogEntry}</p>
       </div>
     );
