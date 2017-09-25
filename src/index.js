@@ -15,7 +15,7 @@ ReactDOM.render(
       <Switch>
         <Route exact path='/' component={Feed}/>
         <Route path='/compose' component={Compose}/>
-        <Route path='/view' component={View}/>
+        <Route path='/view/:id' component={View}/>
       </Switch>
     </BaseLayout>
   </BrowserRouter>

@@ -12,7 +12,10 @@ export default class Feed extends Component {
   componentDidMount() {
     fetch('https://tiny-lasagna-server.herokuapp.com/collections/blogger/')
     .then(results => results.json())
-    .then(data => this.setState({posts: data}))
+    .then(data => {
+      this.setState({posts: data})
+      console.log('data', data);
+    })
     .catch(err => console.log(err))
   }
   render() {
