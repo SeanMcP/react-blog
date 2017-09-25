@@ -4,9 +4,9 @@ import { NavLink } from 'react-router-dom';
 export default class Header extends Component {
   render() {
     return (
-      <nav>
-        <NavLink to='/'>Feed</NavLink>
-        <NavLink to='/compose'>Compose</NavLink>
+      <nav id='mainNav' className='navbar'>
+        <NavLink className='nav-item nav-link active' to='/'>Feed</NavLink>
+        <NavLink id='composeButton' to='/compose'><i className="material-icons md-48">mode_edit</i></NavLink>
       </nav>
     );
   }
