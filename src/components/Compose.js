@@ -30,8 +30,8 @@ export default class Compose extends Component {
       blogTitle: this.state.blogTitle,
       blogEntry: this.state.blogEntry
     }
-    fetch("https://tiny-lasagna-server.herokuapp.com/collections/blogger/", {
-      method: "POST",
+    fetch('https://tiny-lasagna-server.herokuapp.com/collections/blogger/', {
+      method: 'POST',
       body: JSON.stringify(newEntry),
       headers: {
         'Accept': 'application/json',
@@ -46,16 +46,19 @@ export default class Compose extends Component {
   }
   render() {
     return (
-      <div>
-        <h1>Compose a new blog post</h1>
-        <form id='createPost' onSubmit={this.handleSubmit}>
-          <label htmlFor='authorName'>Author:</label>
-          <input name='authorName' value={this.state.authorName}  onChange={this.handleName} />
-          <label htmlFor='blogTitle'>Title:</label>
-          <input name='blogTitle' value={this.state.blogTitle}  onChange={this.handleTitle} />
-          <label htmlFor='blogEntry'>Entry:</label>
-          <textarea name='blogEntry' value={this.state.blogEntry} onChange={this.handleEntry} ></textarea>
-          <input type='submit' value='Post'/>
+      <div className=''>
+        <h1 className='mb-4'>Compose a new blog post</h1>
+        <form id='createPost' className='card p-4' onSubmit={this.handleSubmit}>
+          <div className='form-group'>
+            <input type='text' className='form-control' placeholder='Full name or pen name' name='authorName' value={this.state.authorName}  onChange={this.handleName}/>
+          </div>
+          <div className='form-group'>
+            <input type='text' className='form-control' placeholder='Title of your blog post' name='blogTitle' value={this.state.blogTitle}  onChange={this.handleTitle}/>
+          </div>
+          <div className='form-group'>
+            <textarea type='text' className='form-control' placeholder='Your entry' name='blogEntry' value={this.state.blogEntry}  onChange={this.handleEntry}></textarea>
+          </div>
+          <input type='submit' className='btn btn-secondary' value='Post'/>
         </form>
       </div>
     );

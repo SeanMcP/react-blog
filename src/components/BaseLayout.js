@@ -7,7 +7,9 @@ export default class BaseLayout extends Component {
     return (
       <div>
         <Header />
-        {this.props.children}
+        <div className='p-4'>
+          {this.props.children}
+        </div>
       </div>
     );
   }
